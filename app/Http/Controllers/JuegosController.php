@@ -8,8 +8,7 @@ use App\Models\Juego;
 
 class JuegosController extends Controller{
     public function index(){
-        /*$juegos=array('x','y','z');
-        return view("index", ['tablero'=>$juegos]);*/
+        //$juegos=array('x','y','z');
         $juegos=Juego::all();
         return view("index", ['juegos'=>$juegos]);
     }
@@ -34,11 +33,11 @@ class JuegosController extends Controller{
         $juego->codigo = $request->codigo;
         $juego->nombre = $request->nombre;
         $juego->activo = 1;
-        $juego->jugadores_minimos = $request->input('jugadores_minimos','1');
-        $juego->jugadores_maximos = $request->input('jugadores_maximos','1');
+        $juego->jugadores_minimos = $request-> jugadores_minimos;
+        $juego->jugadores_maximos = $request-> jugadores_maximos;
         $juego->descripcion = $request->descripcion;
         $juego->save();
-        return view("index");
+        return view("home");
     }
     public function updateJuego(Request $request){
         $juego=Juego::find($request);
@@ -46,10 +45,7 @@ class JuegosController extends Controller{
         return view('update');
     }
     public function getTodos(){
-
         $juegos = Juego::orderBy('juego_id','asc')->get();
-
         return response()->json(['juegos'=>$juegos]);
-
     }
 }

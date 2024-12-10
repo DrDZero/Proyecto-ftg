@@ -10,7 +10,8 @@ use App\Models\Juego;
 class PartidasController extends Controller{
     // Display a listing of the resource.
     public function index(){
-        //
+        $partidas=Partida::all();
+        return view("index",['partidas'=>$partidas]);
     }
 
     //Show the form for creating a new resource.
@@ -22,12 +23,14 @@ class PartidasController extends Controller{
     // Store a newly created resource in storage.
     public function storePartida(Request $request){
         $request->validate ([
-            'codigo'=>'required|unique:juegos',
+            'codigo'=>'required|unique:partidas',
             'nombre'=>'required',
+            'jugadores_partida'=>'required'
         ],[
             'codigo.required' => __('El código de la partida no puede estar vacio'),
             'codigo.unique' => __('El código esta en uso, debe ser úinico'),
-            'nombre.required' => __('El nombre de la partida es obligatorio')
+            'nombre.required' => __('El nombre de la partida es obligatorio'),
+            'jugadores_partida.required' => __('Los jugadores son obligatorios')
         ]);
         $partida = new Partida;
         $partida -> codigo = $request -> codigo;
@@ -37,7 +40,7 @@ class PartidasController extends Controller{
         $partida -> jugadores_partida = $request -> jugadores_partida;
         $partida -> comentario = $request -> comentario;
         $partida -> save();
-
+        return view("home");
     }
 
     // Display the specified resource.

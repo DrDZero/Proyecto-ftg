@@ -12,7 +12,7 @@ return new class extends Migration{
             $table->string('nombre')->nullable();
             $table->date('fecha')->nullable();
             $table->bigInteger('juego')->nullable();
-            $table->unsignedInteger('jugadores_partida')->default(1);
+            $table->unsignedInteger('jugadores_partida')->default(2);
             $table->string('comentario')->nullable();
             $table->timestamps();
             $table->foreign('juego_id')->references('id')->on('juegos');

@@ -1,0 +1,81 @@
+/* IMPORTA LA FUENTE GUGI DE GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+/* EL BODY Y SU COLOR PARA EL PROYECTO */
+body{
+    background-color: ghostwhite !important;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select:   none; /* Safari */
+     -khtml-user-select:   none; /* Konqueror HTML */
+       -moz-user-select:   none; /* Old versions of Firefox */
+        -ms-user-select:   none; /* Internet Explorer/Edge */
+            user-select:   none;
+}
+
+/* ESTILOS PARA NAV  EN EL INDEX MENU */
+.nav{
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+.nav-item a{
+    text-decoration: none;
+}
+.nav-item a h2 {
+    color: yellow;
+    font-family: 'Gugi', cursive;
+    margin: 0;
+}
+
+/* ESTILOS PARA NAV BAR EN PLANTILLA DE CADA HERRAMIENTA */
+.navbar-brand{
+    color: yellow !important;
+    font-size: 1.6rem;
+    font-family: 'Gugi', cursive;
+    margin: 0;
+}
+
+/* ESTILOS DEL CONTENT-MAIN DE LA PLANTILLA DE C/U HERRAMIENTAS */
+.content-main{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: justify;
+    min-height: 90vh;
+}
+
+/* EL FOOTER PARA EL PROYECTO */
+.page-footer{
+    position: static;
+    bottom: 0 !important;
+    height: 60px;
+    width: 100%; 
+}
+
+.footer-copyright a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: gold;
+    font-weight: 500;
+}
+
+/* ************************** */
+/* ESTILOS PARA LAS TARJETAS MENU INDEX  */
+.card-header b{
+    font-family: 'Gugi', cursive;
+    margin-bottom: 0;    
+}
+
+.card{
+    min-height: 200px !important;   
+}
+
+.card-body i{
+    font-size: 5rem;
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    font-weight: 800;
+}
