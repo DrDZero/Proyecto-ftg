@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Contador extends Model{
-    use HasFactory;
+    protected $table = 'contadores';
+    protected $primaryKey = 'id';
     protected $guarded = [];
 }
